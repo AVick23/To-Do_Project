@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сегодня</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <main class="task-view">
+        <header class="task-header">
+            <h1>Сегодня</h1>
+            <input type="text" id="new-task-input" placeholder="Добавить задачу, нажмите [Enter] для сохранения">
+        </header>
+        <section class="tasks" id="task-list">
+            <!-- Список задач будет добавляться здесь -->
+        </section>
+    </main>
+    <script src="/static/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskInput = document.getElementById('new-task-input');
+            const taskList = document.getElementById('task-list');
+
+            // Добавление новой задачи
+            taskInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && taskInput.value.trim() !== '') {
+                    addTask(taskInput.value);
+                    taskInput.value = '';
+                }
+            });
+
+            // Функция добавления задачи
+            function addTask(taskText) {
+                const task = document.createElement('div');
+                task.classList.add('task');
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.addEventListener('change', function() {
+                    task.classList.toggle('completed');
+                });
+
+                const taskSpan = document.createElement('span');
+                taskSpan.textContent = taskText;
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Удалить';
+                removeButton.addEventListener('click', function() {
+                    taskList.removeChild(task);
+                });
+
+                task.appendChild(checkbox);
+                task.appendChild(taskSpan);
+                task.appendChild(removeButton);
+
+                taskList.appendChild(task);
+            }
+        });
+    </script>
+</body>
+</html>

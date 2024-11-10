@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Левая панель с категориями и проектами -->
+        <aside class="sidebar">
+            <div class="section">
+                <h3>Список</h3>
+                <ul>
+                    <li><a href="#" onclick="loadContent('/today')">Сегодня</a></li>
+                    <li><a href="#" onclick="loadContent('/tomorrow')">Завтра</a></li>
+                    <li><a href="#" onclick="loadContent('/week')">На эту неделю</a></li>
+                    <!-- Добавьте остальные разделы по аналогии -->
+                </ul>
+            </div>
+            <div class="section">
+                <h3>Проекты</h3>
+                <ul>
+                    <li><a href="#" onclick="loadContent('/project/cli')">CLI</a></li>
+                    <li><a href="#" onclick="loadContent('/project/diploma')">Дипломная</a></li>
+                    <!-- Добавьте остальные проекты по аналогии -->
+                </ul>
+                <button class="add-project">+ Добавить проект</button>
+            </div>
+        </aside>
+
+        <!-- Основная панель с задачами -->
+        <main class="task-view" id="main-content">
+            <!-- Изначальный контент главной страницы будет загружаться сюда -->
+        </main>
+    </div>
+    <script>
+        function loadContent(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('main-content').innerHTML = html;
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* Общие стили */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #FAFAFA; /* Светлый фон */
+  color: #212121; /* Темный текст */
+}
+
+.container {
+  display: flex;
+}
+
+aside.sidebar {
+  width: 250px;
+  background-color: #FFFFFF; /* Белый цвет */
+  color: #424242; /* Темно-серый для текста */
+  padding: 20px;
+  height: 100vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для панели */
+  border-radius: 8px; /* Закругленные углы */
+}
+
+aside.sidebar .section h3 {
+  margin-top: 0;
+  font-weight: 500;
+  color: #757575; /* Серый цвет заголовков */
+}
+
+aside.sidebar .section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+aside.sidebar .section ul li {
+  margin: 10px 0;
+}
+
+aside.sidebar .section ul li a {
+  color: #424242; /* Темно-серый */
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 4px; /* Закругленные углы */
+  transition: background-color 0.3s;
+}
+
+aside.sidebar .section ul li a:hover {
+  background-color: #ECEFF1; /* Светлый серый для наведения */
+}
+
+button.add-project {
+  background-color: #FF7043; /* Цвет акцента */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 4px; /* Закругленные углы */
+  transition: background-color 0.3s;
+}
+
+button.add-project:hover {
+  background-color: #FF8A65; /* Светлый акцент для наведения */
+}
+
+/* Основная панель задач */
+main.task-view {
+  flex: 1;
+  background-color: #FFFFFF; /* Белый цвет */
+  padding: 20px;
+  border-radius: 8px; /* Закругленные углы */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для панели */
+}
+
+header.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ECEFF1; /* Светлый серый для границы */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+header.task-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+header.task-header input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border: 1px solid #ECEFF1; /* Светлый серый для границы */
+  border-radius: 4px; /* Закругленные углы */
+  transition: border-color 0.3s;
+}
+
+header.task-header input:focus {
+  border-color: #FF7043; /* Цвет акцента при фокусе */
+}
+
+section.tasks .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ECEFF1; /* Светлый серый для границы */
+  padding: 10px 0;
+}
+
+section.tasks .task span {
+  flex: 1;
+  margin-left: 10px;
+}
+
+section.tasks .task.completed span {
+  text-decoration: line-through;
+  color: #BDBDBD; /* Светло-серый для завершенных задач */
+}
+
+section.tasks .task button {
+  background-color: #FF7043; /* Цвет акцента */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px; /* Закругленные углы */
+  transition: background-color 0.3s;
+}
+
+section.tasks .task button:hover {
+  background-color: #FF8A65; /* Светлый акцент для наведения */
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.timer span {
+  font-size: 24px;
+  color: #424242; /* Темно-серый */
+}
+
+.timer button {
+  background-color: #FF7043; /* Цвет акцента */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%; /* Закругленные углы */
+  transition: background-color 0.3s;
+}
+
+.timer button:hover {
+  background-color: #FF8A65; /* Светлый акцент для наведения */
+}
